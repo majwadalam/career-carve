@@ -15,7 +15,7 @@ const BookingForm = ({ onBookingComplete }) => {
     const student_id = 1; // For testing purposes, assume student_id is 1.
 
     axios
-      .post("http://localhost:3000/bookings", {
+      .post("https://career-carve.onrender.com/bookings", {
         student_id,
         mentor_id: selectedMentor.id,
         booking_time: bookingTime,

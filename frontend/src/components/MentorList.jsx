@@ -10,7 +10,7 @@ const MentorList = ({ areaOfInterest, setAreaOfInterest, onSelectMentor }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/mentors")
+      .get("https://career-carve.onrender.com/mentors")
       .then((response) => {
         setMentors(response.data.mentors);
         setFilteredMentors(response.data.mentors);
