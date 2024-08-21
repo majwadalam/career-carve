@@ -2,8 +2,21 @@
 // src/components/PaymentPage.js
 
 const PaymentPage = ({ mentor, duration, onPaymentComplete }) => {
-  const costPerHour = mentor.is_premium ? 100 : 50;
-  const totalCost = costPerHour * duration;
+  // Determine the cost based on the selected duration
+  const calculateTotalCost = (duration) => {
+    switch (duration) {
+      case "30":
+        return 2000;
+      case "45":
+        return 3000;
+      case "60":
+        return 4000;
+      default:
+        return 0; // This is a fallback, ideally duration should always be 30, 45, or 60
+    }
+  };
+
+  const totalCost = calculateTotalCost(duration);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-yellow-400 to-orange-500 p-8">
@@ -19,7 +32,7 @@ const PaymentPage = ({ mentor, duration, onPaymentComplete }) => {
           )
         </p>
         <p className="text-xl text-gray-700 mb-4">
-          Duration: <span className="font-semibold">{duration}</span> hour(s)
+          Duration: <span className="font-semibold">{duration}</span> minutes
         </p>
         <p className="text-2xl font-bold text-gray-800 mb-8">
           Total Cost: <span className="text-green-600">${totalCost}</span>

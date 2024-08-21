@@ -45,16 +45,17 @@ const BookingForm = ({ onBookingComplete }) => {
               Booking Session with {selectedMentor.name}
             </h2>
             <label className="block text-gray-700 text-lg mb-2">
-              Duration (hours):
+              Duration (minutes):
             </label>
-            <input
-              type="number"
+            <select
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
-              min="1"
-              max="5"
               className="mb-4 p-3 w-full rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            >
+              <option value="30">30</option>
+              <option value="45">45</option>
+              <option value="60">60</option>
+            </select>
             <button
               onClick={handleBooking}
               className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
