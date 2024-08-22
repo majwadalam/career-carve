@@ -35,7 +35,7 @@ const PaymentPage = ({ mentor, duration, onPaymentComplete }) => {
           Duration: <span className="font-semibold">{duration}</span> minutes
         </p>
         <p className="text-2xl font-bold text-gray-800 mb-8">
-          Total Cost: <span className="text-green-600">${totalCost}</span>
+          Total Cost: <span className="text-green-600">${mentor.is_premium ? totalCost * 1.5 : totalCost}</span>
         </p>
         <button
           onClick={onPaymentComplete}

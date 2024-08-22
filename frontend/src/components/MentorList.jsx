@@ -26,7 +26,7 @@ const MentorList = ({ areaOfInterest, setAreaOfInterest, onSelectMentor }) => {
 
     if (value) {
       const filtered = mentors.filter((mentor) =>
-        mentor.areas_of_expertise.toLowerCase().includes(value.toLowerCase())
+        mentor.areas_of_expertise.toLowerCase().includes(value.toLowerCase()) || mentor.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredMentors(filtered);
     } else {
